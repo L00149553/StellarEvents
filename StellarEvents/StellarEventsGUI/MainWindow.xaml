@@ -1,0 +1,55 @@
+﻿<Window x:Class="StellarEventsGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StellarEventsGUI"
+        mc:Ignorable="d"
+        Title="Stellar Events" MaxWidth="600" MinWidth="600" Width="600" MaxHeight="250" Height="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Center"
+            FontSize="20"
+            Content="Register"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,0,20">
+            <Label Content="Name" Margin="0,10"/>
+            <Label Content="Password" Margin="0,10"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,20">
+            <TextBox Name="tbxName" Grid.Row="1" Grid.Column="1" Height="26" Width="200" Margin="0,10" TabIndex="0" ToolTip="Enter your name"/>
+            <PasswordBox Name="tbxPassword" Grid.Row="2" Grid.Column="1" Height="26" Width="200" Margin="0,10" TabIndex="1" ToolTip="Enter password"/>
+            <Button Name="btnRegister" Content="Register" Height="26" Width="130" Margin="10,1" ToolTip="Click this button to Register"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Content="Already have an account?"></Label>
+            <Button Name="btnLogin" Content="Login" Height="26" Width="130" Margin="10,1" ToolTip="Click this button to Login"/>
+        </StackPanel>
+
+        <Image
+            Grid.Row="1"
+            Grid.Column="2"
+            Grid.RowSpan="2"
+            Source="Images/stellarevents.png"
+            Margin="-15"
+            Stretch="None"/>
+
+    </Grid>
+</Window>
