@@ -42,8 +42,8 @@ namespace StellarEventsGUI
         private void btnEvents_Click(object sender, RoutedEventArgs e)
         {
             Events events = new Events();
+            events.user = user;
             frmMain.Navigate(events);
-
 
         }
     }

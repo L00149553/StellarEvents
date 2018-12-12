@@ -32,22 +32,21 @@ namespace StellarEventsGUI
         {
             string currentUser = tbxName.Text;
             string currentPassword = tbxPassword.Password;
-
+            
             foreach (var user in db.Users)
             {
-                if (user.Name == currentUser && user.Password == currentPassword)
+                if(user.Name == currentUser && user.Password == currentPassword)
                 {
                     Dashboard dashboard = new Dashboard();
-                    dashboard.Owner = this;
-                    dashboard.ShowDialog();
-                    this.Hide();
                     dashboard.user = user;
-                    break;
+                    dashboard.ShowDialog();
+                    //dashboard.Owner = this;
+                    this.Close();
                 }
-                else
-                    MessageBox.Show("Please check your username and password");
-
             }
+
+            MessageBox.Show("Please try again");
+                
         }
     }
 }

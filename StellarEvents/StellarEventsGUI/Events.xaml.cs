@@ -25,6 +25,8 @@ namespace StellarEventsGUI
 
         List<Event> events = new List<Event>();
 
+        public User user = new User();
+
         public Events()
         {
             InitializeComponent();
@@ -32,6 +34,8 @@ namespace StellarEventsGUI
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            CheckUserType(user);
+
             lstEventsList.ItemsSource = events;
             foreach (var ev in db.Events)
             {
@@ -44,7 +48,7 @@ namespace StellarEventsGUI
             if (user.TypeId == 1)
                 btnCreate.Visibility = Visibility.Visible;
             else
-                btnCreate.Visibility = Visibility.Collapsed;
+                btnCreate.Visibility = Visibility.Hidden;
         }
     }
 }
