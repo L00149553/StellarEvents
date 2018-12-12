@@ -23,8 +23,6 @@ namespace StellarEventsGUI
     {
         stellarEntities db = new stellarEntities("metadata=res://*/StellarEventsModel.csdl|res://*/StellarEventsModel.ssdl|res://*/StellarEventsModel.msl;provider=System.Data.SqlClient;provider connection string='data source=192.168.1.15;initial catalog=stellar;user id=alex;password=Ernunk.26;pooling=False;MultipleActiveResultSets=True;App=EntityFramework'");
 
-        List<Event> events = new List<Event>();
-
         public User user = new User();
 
         public Events()
@@ -36,11 +34,6 @@ namespace StellarEventsGUI
         {
             CheckUserType(user);
 
-            lstEventsList.ItemsSource = events;
-            foreach (var ev in db.Events)
-            {
-                events.Add(ev);
-            }
         }
 
         private void CheckUserType(User user)
@@ -49,6 +42,13 @@ namespace StellarEventsGUI
                 btnCreate.Visibility = Visibility.Visible;
             else
                 btnCreate.Visibility = Visibility.Hidden;
+        }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+            CreateEvent createEvent = new CreateEvent();
+            this.NavigationService.Navigate(createEvent);
+            createEvent.user = user;
         }
     }
 }

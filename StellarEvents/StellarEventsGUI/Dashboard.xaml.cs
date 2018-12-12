@@ -21,6 +21,8 @@ namespace StellarEventsGUI
     public partial class Dashboard : Window
     {
 
+        stellarEntities db = new stellarEntities("metadata=res://*/StellarEventsModel.csdl|res://*/StellarEventsModel.ssdl|res://*/StellarEventsModel.msl;provider=System.Data.SqlClient;provider connection string='data source=192.168.1.15;initial catalog=stellar;user id=alex;password=Ernunk.26;pooling=False;MultipleActiveResultSets=True;App=EntityFramework'");
+
         public User user = new User();
 
         public Dashboard()
@@ -43,6 +45,16 @@ namespace StellarEventsGUI
         {
             Events events = new Events();
             events.user = user;
+
+            List<Event> allEvents = new List<Event>();
+
+            events.lstEventsList.ItemsSource = allEvents;
+
+            foreach (var ev in db.Events)
+            {
+                allEvents.Add(ev);
+            }
+
             frmMain.Navigate(events);
 
         }

@@ -22,23 +22,22 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="10,10,10,10">
-            <Label Content="Event Name" Margin="0,10"/>
+            <Label Content="Event Description" Margin="0,10"/>
             <Label Content="Date and Time" Margin="0,10"/>
             <Label Content="Genre" Margin="0,10"/>
             <Label Content="Venue" Margin="0,10"/>
-            <Label Content="Description" Margin="0,10"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1"  Margin="10,10,10,10">
-            <TextBox Name="tbxName" Grid.Row="1" Grid.Column="1" Height="26" Width="200" Margin="0,10" TabIndex="0"/>
+            <TextBox Name="tbxDescription" Grid.Row="1" Grid.Column="1" Height="26" Width="200" Margin="0,10" TabIndex="0"/>
             <TextBox Name="tbxDate" Grid.Row="1" Grid.Column="1" Height="26" Width="200" Margin="0,10" TabIndex="1"/>
-            <ComboBox Name="tbxGenre" Grid.Row="1" Grid.Column="1" Height="26" Width="200" Margin="0,10" TabIndex="2"/>
+            <TextBox Name="tbxGenre" Grid.Row="1" Grid.Column="1" Height="26" Width="200" Margin="0,10" TabIndex="1"/>
             <TextBox Name="tbxVenue" Grid.Row="1" Grid.Column="1" Height="26" Width="200" Margin="0,10" TabIndex="3"/>
-            <TextBox Name="tbxDescription" Grid.Row="1" Grid.Column="1" Height="89" Width="200" Margin="0,10,1,10" TabIndex="0"/>
+            
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,10">
-            <Button Name="btnConfirm" Height="26" Width="100" Content="Confirm" Margin="10,0"/>
+            <Button Name="btnConfirm" Height="26" Width="100" Content="Confirm" Margin="10,0" Click="btnConfirm_Click"/>
             <Button Name="btnCancel" Height="26" Width="100" Content="Cancel" Margin="10,0"/>
         </StackPanel>
 

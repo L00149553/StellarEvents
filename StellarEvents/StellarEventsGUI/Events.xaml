@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Margin="10,10,10,10">
-            <ListView Name="lstEventsList" Grid.Row="0" Margin="0,0,174,0" Width="600" HorizontalAlignment="Left">
+            <ListView Name="lstEventsList" Grid.Row="0" Grid.ColumnSpan="2">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" Width="150">
@@ -59,7 +59,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,10,10,10">
-            <Button Name="btnCreate" Height="26" Width="100" Content="Create Event" Margin="10,0" HorizontalAlignment="Right"/>
+            <Button Name="btnCreate" Height="26" Width="100" Content="Create Event" Margin="10,0" HorizontalAlignment="Right" Click="btnCreate_Click"/>
         </StackPanel>
 
     </Grid>
