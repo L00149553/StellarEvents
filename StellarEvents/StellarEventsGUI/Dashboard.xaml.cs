@@ -32,6 +32,7 @@ namespace StellarEventsGUI
 
         private void CheckUserType (User user)
         {
+            //Add Users option if the user type is Administrator
             if (user.TypeId == 3)
                 btnUsers.Visibility = Visibility.Visible;
         }
@@ -43,20 +44,27 @@ namespace StellarEventsGUI
 
         private void btnEvents_Click(object sender, RoutedEventArgs e)
         {
+            //Create events screen when the Events button is clicked.
             Events events = new Events();
             events.user = user;
 
-            List<Event> allEvents = new List<Event>();
-
-            events.lstEventsList.ItemsSource = allEvents;
-
-            foreach (var ev in db.Events)
-            {
-                allEvents.Add(ev);
-            }
-
+            //Navigate to the Events screen.
             frmMain.Navigate(events);
 
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnUsers_Click(object sender, RoutedEventArgs e)
+        {
+            //Create users screen when the Users button is clicked.
+            Users users = new Users();
+
+            //Navigate to the Users screen.
+            frmMain.Navigate(users);
         }
     }
 }

@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Margin="10,10,10,10">
-            <ListView Name="lstEventsList" Grid.Row="0" Grid.ColumnSpan="2">
+            <ListView Name="lstEventsList" Grid.Row="0" Grid.ColumnSpan="2" SelectionChanged="lstEventsList_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" Width="150">
@@ -53,9 +53,9 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,10,10">
-            <Button Name="btnView" Height="26" Width="100" Content="View" Margin="10,0" HorizontalAlignment="Left"/>
-            <Button Name="btnModify" Height="26" Width="100" Content="Modify" Margin="10,0" HorizontalAlignment="Left"/>
-            <Button Name="btnDelete" Height="26" Width="100" Content="Delete" Margin="10,0" HorizontalAlignment="Left"/>
+            <Button Name="btnView" Height="26" Width="100" Content="View" Margin="10,0" HorizontalAlignment="Left" Click="btnView_Click"/>
+            <Button Name="btnModify" Height="26" Width="100" Content="Modify" Margin="10,0" HorizontalAlignment="Left" Click="btnModify_Click"/>
+            <Button Name="btnDelete" Height="26" Width="100" Content="Delete" Margin="10,0" HorizontalAlignment="Left" Click="btnDelete_Click"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,10,10,10">

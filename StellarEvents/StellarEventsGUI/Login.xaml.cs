@@ -30,21 +30,25 @@ namespace StellarEventsGUI
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            //Set variables to hold name and password entered into the textfields.
             string currentUser = tbxName.Text;
             string currentPassword = tbxPassword.Password;
-            
+
+            //Loop through all users in the users table of the database.
             foreach (var user in db.Users)
             {
+                //Check if the user's name and password matches those entered into the textfields.
                 if(user.Name == currentUser && user.Password == currentPassword)
                 {
+                    //Create the dashboard screen upon successful Login
                     Dashboard dashboard = new Dashboard();
                     dashboard.user = user;
                     dashboard.ShowDialog();
-                    //dashboard.Owner = this;
-                    this.Close();
+                    dashboard.Owner = this;
                 }
             }
 
+            //Display error message for unsucessful login.
             MessageBox.Show("Please try again");
                 
         }

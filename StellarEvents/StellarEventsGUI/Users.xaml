@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:StellarEventsGUI"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Page_Loaded"
       Title="Users">
 
     <Grid>
@@ -15,28 +16,14 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="10,10,10,10">
-            <ListView Name="lstUsersList" Grid.Row="0" Margin="0,0,324,0" Width="650" HorizontalAlignment="Left">
+        <StackPanel Margin="10">
+            <ListView Name="lstUsersList" Grid.Row="0" Grid.ColumnSpan="2" SelectionChanged="lstUsersList_SelectionChanged" Margin="0,0,624,0">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="ID" Width="150">
+                        <GridViewColumn Header="Name" Width="150">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Name" Width="250">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="User Type" Width="250">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -46,8 +33,11 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,10,10">
-            <Button Name="btnDelete" Height="26" Width="100" Content="Delete" Margin="10,0" HorizontalAlignment="Left"/>
+            <Label FontSize="16" Name="lblUserType"/>
+            <Label FontSize="16" Name="lblNumReg"/>
+            <Label FontSize="16" Name="lblNumCreated"/>
         </StackPanel>
+        
 
 
     </Grid>
