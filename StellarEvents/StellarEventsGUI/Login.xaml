@@ -38,10 +38,7 @@
             <Button Name="btnLogin" Content="Login" Height="26" Width="130" Margin="10,1" ToolTip="Click this button to Login" Click="btnLogin_Click"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Label Content="Don't have an account?"></Label>
-            <Button Name="btnRegister" Content="Register" Height="26" Width="130" Margin="10,1" ToolTip="Click this button to Register"/>
-        </StackPanel>
+        
 
         <Image
             Grid.Row="1"

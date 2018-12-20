@@ -40,11 +40,14 @@ namespace StellarEventsGUI
                 //Check if the user's name and password matches those entered into the textfields.
                 if(user.Name == currentUser && user.Password == currentPassword)
                 {
+                    this.Hide();
+
                     //Create the dashboard screen upon successful Login
                     Dashboard dashboard = new Dashboard();
                     dashboard.user = user;
                     dashboard.ShowDialog();
                     dashboard.Owner = this;
+                    
                 }
             }
 

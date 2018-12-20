@@ -30,6 +30,7 @@
             <Label Content="Genre" Margin="0,10" FontWeight="Bold"/>
             <Label Content="Venue" Margin="0,10" FontWeight="Bold"/>
             <Label Content="Attendees" Margin="0,10" FontWeight="Bold"/>
+            <Label Content="Created By" Margin="0,10" FontWeight="Bold"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1"  Margin="10,10,10,10">
@@ -38,6 +39,7 @@
             <Label Name="lblGenre" Margin="0,10"/>
             <Label Name="lblVenue" Margin="0,10"/>
             <Label Name="lblAttendees" Margin="0,10"/>
+            <Label Name="lblCreator" Margin="0,10"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,10,10" Width="100"/>

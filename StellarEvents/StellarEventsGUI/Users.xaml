@@ -16,6 +16,11 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
         <StackPanel Margin="10">
             <ListView Name="lstUsersList" Grid.Row="0" Grid.ColumnSpan="2" SelectionChanged="lstUsersList_SelectionChanged" Margin="0,0,624,0">
                 <ListView.View>
@@ -33,11 +38,14 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,10,10">
-            <Label FontSize="16" Name="lblUserType"/>
-            <Label FontSize="16" Name="lblNumReg"/>
-            <Label FontSize="16" Name="lblNumCreated"/>
+            <Label FontSize="16" Name="lblDetails"/>
         </StackPanel>
-        
+        <ComboBox Name="cmbType" HorizontalAlignment="Left" Margin="261,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbType_SelectionChanged">
+            <ComboBoxItem Name="Booker">Booker</ComboBoxItem>
+            <ComboBoxItem Name="Eventgoer">Eventgoer</ComboBoxItem>
+            <ComboBoxItem Name="Admin">Admin</ComboBoxItem>
+        </ComboBox>
+
 
 
     </Grid>

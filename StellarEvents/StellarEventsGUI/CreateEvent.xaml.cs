@@ -43,7 +43,6 @@ namespace StellarEventsGUI
 
             MessageBox.Show("Event has been added");
 
-            tbxDate.Text = "";
             tbxGenre.Text = "";
             tbxDescription.Text = "";
             tbxVenue.Text = "";

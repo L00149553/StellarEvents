@@ -81,7 +81,7 @@ namespace StellarEventsGUI
                     {
                         //Delete the registration record.
                         db.Registrations.RemoveRange(db.Registrations.Where(t => t.EventId == deletedEvent.EventId));
-                        db.SaveChanges();
+
                     }
                 }
 

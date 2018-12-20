@@ -42,6 +42,7 @@ namespace StellarEventsGUI
             lblDate.Content = viewedEvent.Date.ToString();
             lblVenue.Content = viewedEvent.Venue.Trim();
             lblGenre.Content = viewedEvent.Genre.Trim();
+            lblCreator.Content = viewedEvent.User.Name.Trim();
             lblAttendees.Content = AttendeeCount().ToString();
 
         }

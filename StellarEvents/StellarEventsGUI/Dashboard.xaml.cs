@@ -55,7 +55,7 @@ namespace StellarEventsGUI
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
         private void btnUsers_Click(object sender, RoutedEventArgs e)
@@ -65,6 +65,11 @@ namespace StellarEventsGUI
 
             //Navigate to the Users screen.
             frmMain.Navigate(users);
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

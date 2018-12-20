@@ -42,9 +42,13 @@ namespace StellarEventsGUI
                 int numReg = db.Registrations.Where(t => t.UserId == selectedUser.UserId).Count();
                 int numCreated = db.Events.Where(t => t.UserId == selectedUser.UserId).Count();
 
-                lblUserType.Content = "User Type: " + selectedUser.UserType.UserRole.ToString();
-                lblNumReg.Content = "Events Attended: " + numReg.ToString();
-                lblNumCreated.Content = "Events Created: " + numCreated.ToString();
+                if (selectedUser.TypeId == 1)
+                    lblDetails.Content = "This booker has created " + numCreated.ToString() + " events";
+                else if (selectedUser.TypeId == 2)
+                    lblDetails.Content = "This eventgoer has attended " + numReg.ToString() + " events";
+                else if (selectedUser.TypeId == 3)
+                    lblDetails.Content = "Administrators cannot create or attend events";
+
             }
 
         }
@@ -61,6 +65,27 @@ namespace StellarEventsGUI
             foreach (var user in db.Users)
             {
                 users.Add(user);
+            }
+
+            //Refresh list view.
+            lstUsersList.Items.Refresh();
+        }
+
+        private void cmbType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selected = ((ComboBoxItem)cmbType.SelectedItem).Content.ToString();
+
+            //Set source of list view items to users.
+            lstUsersList.ItemsSource = users;
+
+            //Clear contents currently in list view.
+            users.Clear();
+
+            //Populate the list view.
+            foreach (var user in db.Users)
+            {
+                if (user.UserType.UserRole == selected)
+                    users.Add(user);
             }
 
             //Refresh list view.
