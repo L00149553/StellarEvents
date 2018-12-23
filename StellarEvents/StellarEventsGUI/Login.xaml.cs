@@ -1,6 +1,7 @@
 ﻿using DBLibrary;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,21 +35,28 @@ namespace StellarEventsGUI
             string currentUser = tbxName.Text;
             string currentPassword = tbxPassword.Password;
 
-            //Loop through all users in the users table of the database.
-            foreach (var user in db.Users)
+            try
             {
-                //Check if the user's name and password matches those entered into the textfields.
-                if(user.Name == currentUser && user.Password == currentPassword)
+                //Loop through all users in the users table of the database.
+                foreach (var user in db.Users)
                 {
-                    this.Hide();
+                    //Check if the user's name and password matches those entered into the textfields.
+                    if (user.Name == currentUser && user.Password == currentPassword)
+                    {
+                        this.Hide();
 
-                    //Create the dashboard screen upon successful Login
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.user = user;
-                    dashboard.ShowDialog();
-                    dashboard.Owner = this;
-                    
+                        //Create the dashboard screen upon successful Login
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.user = user;
+                        dashboard.ShowDialog();
+                        dashboard.Owner = this;
+
+                    }
                 }
+            }
+            catch(EntityException)
+            {
+                MessageBox.Show("Database Error");
             }
 
             //Display error message for unsucessful login.
