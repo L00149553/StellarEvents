@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateEventProcess.cs" />
     <Compile Include="Event.cs">
       <DependentUpon>StellarEventsModel.tt</DependentUpon>
     </Compile>

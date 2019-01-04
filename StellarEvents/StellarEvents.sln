@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StellarEventsGUI", "Stellar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibrary", "DBLibrary\DBLibrary.csproj", "{F7B18A8D-3B73-4D88-B3BA-1A4FE4F8509C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibrary.Tests", "DBLibrary.Tests\DBLibrary.Tests.csproj", "{EA9C7F42-7C99-41E6-A5BF-BF4C78EF9BF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F7B18A8D-3B73-4D88-B3BA-1A4FE4F8509C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7B18A8D-3B73-4D88-B3BA-1A4FE4F8509C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7B18A8D-3B73-4D88-B3BA-1A4FE4F8509C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA9C7F42-7C99-41E6-A5BF-BF4C78EF9BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA9C7F42-7C99-41E6-A5BF-BF4C78EF9BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA9C7F42-7C99-41E6-A5BF-BF4C78EF9BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA9C7F42-7C99-41E6-A5BF-BF4C78EF9BF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

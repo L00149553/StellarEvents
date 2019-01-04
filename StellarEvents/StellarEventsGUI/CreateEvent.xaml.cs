@@ -24,6 +24,7 @@ namespace StellarEventsGUI
 
         stellarEntities db = new stellarEntities("metadata=res://*/StellarEventsModel.csdl|res://*/StellarEventsModel.ssdl|res://*/StellarEventsModel.msl;provider=System.Data.SqlClient;provider connection string='data source=192.168.1.15;initial catalog=stellar;user id=alex;password=Ernunk.26;pooling=False;MultipleActiveResultSets=True;App=EntityFramework'");
 
+        CreateEventProcess createEventProcess = new CreateEventProcess();
         public CreateEvent()
         {
             InitializeComponent();
@@ -39,13 +40,21 @@ namespace StellarEventsGUI
             newEvent.Description = tbxDescription.Text;
             newEvent.Venue = tbxVenue.Text;
             newEvent.UserId = user.UserId;
-            SaveEvent(newEvent);
 
-            MessageBox.Show("Event has been added");
+            bool validated = createEventProcess.ValidateUserInput(tbxGenre.Text, tbxVenue.Text, tbxDescription.Text);
 
-            tbxGenre.Text = "";
-            tbxDescription.Text = "";
-            tbxVenue.Text = "";
+            if (validated == true)
+            {
+                SaveEvent(newEvent);
+
+                MessageBox.Show("Event has been added");
+
+                tbxGenre.Text = "";
+                tbxDescription.Text = "";
+                tbxVenue.Text = "";
+            }
+            else
+                MessageBox.Show("Please try again");
 
         }
 
